@@ -14,7 +14,7 @@ namespace PreParcial2.Models
         public Denuncia (Vehiculo asegurado)
         { dominio = asegurado; }
     
-        public string ToString()
+        public override string ToString()
         {
             return $"{dominio}";
         }
