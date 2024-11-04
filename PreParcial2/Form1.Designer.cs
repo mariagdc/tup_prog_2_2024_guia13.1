@@ -41,6 +41,8 @@
             this.btnImportar = new System.Windows.Forms.Button();
             this.btnDenuncia = new System.Windows.Forms.Button();
             this.btnNuevoC = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -144,6 +146,7 @@
             this.btnExportar.TabIndex = 5;
             this.btnExportar.Text = "Exportar Tickets";
             this.btnExportar.UseVisualStyleBackColor = true;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
             // btnImportar
             // 
@@ -154,6 +157,7 @@
             this.btnImportar.TabIndex = 6;
             this.btnImportar.Text = "Importar Tickets";
             this.btnImportar.UseVisualStyleBackColor = true;
+            this.btnImportar.Click += new System.EventHandler(this.btnImportar_Click);
             // 
             // btnDenuncia
             // 
@@ -175,6 +179,10 @@
             this.btnNuevoC.Text = "Atender Nuevo Cliente";
             this.btnNuevoC.UseVisualStyleBackColor = true;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -190,6 +198,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -212,6 +221,8 @@
         public System.Windows.Forms.Button btnTicket;
         public System.Windows.Forms.Button btnExportar;
         public System.Windows.Forms.TextBox txbDNI;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 
