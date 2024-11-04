@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PreParcial2.Models
 {
-    internal class Cliente
+    internal class Cliente : Ticket
     {
         private long DNI;
         private static int numero;

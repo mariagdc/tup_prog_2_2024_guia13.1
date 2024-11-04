@@ -30,6 +30,10 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txbDNI = new System.Windows.Forms.TextBox();
+            this.rbtnNuevo = new System.Windows.Forms.RadioButton();
+            this.rbtnDenuncia = new System.Windows.Forms.RadioButton();
+            this.txbPatente = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.btnTicket = new System.Windows.Forms.Button();
@@ -37,10 +41,6 @@
             this.btnImportar = new System.Windows.Forms.Button();
             this.btnDenuncia = new System.Windows.Forms.Button();
             this.btnNuevoC = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txbPatente = new System.Windows.Forms.TextBox();
-            this.rbtnDenuncia = new System.Windows.Forms.RadioButton();
-            this.rbtnNuevo = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,15 +56,55 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txbDNI);
             this.panel1.Controls.Add(this.rbtnNuevo);
             this.panel1.Controls.Add(this.rbtnDenuncia);
             this.panel1.Controls.Add(this.txbPatente);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(323, 124);
+            this.panel1.Size = new System.Drawing.Size(323, 128);
             this.panel1.TabIndex = 1;
+            // 
+            // txbDNI
+            // 
+            this.txbDNI.Location = new System.Drawing.Point(140, 83);
+            this.txbDNI.Name = "txbDNI";
+            this.txbDNI.Size = new System.Drawing.Size(129, 20);
+            this.txbDNI.TabIndex = 9;
+            this.txbDNI.Text = "DNI";
+            // 
+            // rbtnNuevo
+            // 
+            this.rbtnNuevo.AutoSize = true;
+            this.rbtnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnNuevo.Location = new System.Drawing.Point(15, 80);
+            this.rbtnNuevo.Name = "rbtnNuevo";
+            this.rbtnNuevo.Size = new System.Drawing.Size(118, 22);
+            this.rbtnNuevo.TabIndex = 12;
+            this.rbtnNuevo.TabStop = true;
+            this.rbtnNuevo.Text = "Nuevo Cliente";
+            this.rbtnNuevo.UseVisualStyleBackColor = true;
+            // 
+            // rbtnDenuncia
+            // 
+            this.rbtnDenuncia.AutoSize = true;
+            this.rbtnDenuncia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnDenuncia.Location = new System.Drawing.Point(15, 51);
+            this.rbtnDenuncia.Name = "rbtnDenuncia";
+            this.rbtnDenuncia.Size = new System.Drawing.Size(88, 22);
+            this.rbtnDenuncia.TabIndex = 11;
+            this.rbtnDenuncia.TabStop = true;
+            this.rbtnDenuncia.Text = "Denuncia";
+            this.rbtnDenuncia.UseVisualStyleBackColor = true;
+            // 
+            // txbPatente
+            // 
+            this.txbPatente.Location = new System.Drawing.Point(140, 54);
+            this.txbPatente.Name = "txbPatente";
+            this.txbPatente.Size = new System.Drawing.Size(129, 20);
+            this.txbPatente.TabIndex = 10;
+            this.txbPatente.Text = "ingresar patente";
             // 
             // label2
             // 
@@ -93,6 +133,7 @@
             this.btnTicket.TabIndex = 4;
             this.btnTicket.Text = "Ticket";
             this.btnTicket.UseVisualStyleBackColor = true;
+            this.btnTicket.Click += new System.EventHandler(this.btnTicket_Click);
             // 
             // btnExportar
             // 
@@ -134,46 +175,6 @@
             this.btnNuevoC.Text = "Atender Nuevo Cliente";
             this.btnNuevoC.UseVisualStyleBackColor = true;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(140, 80);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(129, 20);
-            this.textBox1.TabIndex = 9;
-            this.textBox1.Text = "DNI";
-            // 
-            // txbPatente
-            // 
-            this.txbPatente.Location = new System.Drawing.Point(140, 51);
-            this.txbPatente.Name = "txbPatente";
-            this.txbPatente.Size = new System.Drawing.Size(129, 20);
-            this.txbPatente.TabIndex = 10;
-            this.txbPatente.Text = "ingresar patente";
-            // 
-            // rbtnDenuncia
-            // 
-            this.rbtnDenuncia.AutoSize = true;
-            this.rbtnDenuncia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnDenuncia.Location = new System.Drawing.Point(15, 51);
-            this.rbtnDenuncia.Name = "rbtnDenuncia";
-            this.rbtnDenuncia.Size = new System.Drawing.Size(88, 22);
-            this.rbtnDenuncia.TabIndex = 11;
-            this.rbtnDenuncia.TabStop = true;
-            this.rbtnDenuncia.Text = "Denuncia";
-            this.rbtnDenuncia.UseVisualStyleBackColor = true;
-            // 
-            // rbtnNuevo
-            // 
-            this.rbtnNuevo.AutoSize = true;
-            this.rbtnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnNuevo.Location = new System.Drawing.Point(15, 80);
-            this.rbtnNuevo.Name = "rbtnNuevo";
-            this.rbtnNuevo.Size = new System.Drawing.Size(118, 22);
-            this.rbtnNuevo.TabIndex = 12;
-            this.rbtnNuevo.TabStop = true;
-            this.rbtnNuevo.Text = "Nuevo Cliente";
-            this.rbtnNuevo.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,9 +209,9 @@
         private System.Windows.Forms.RadioButton rbtnNuevo;
         private System.Windows.Forms.RadioButton rbtnDenuncia;
         private System.Windows.Forms.TextBox txbPatente;
-        private System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.Button btnTicket;
         public System.Windows.Forms.Button btnExportar;
+        public System.Windows.Forms.TextBox txbDNI;
     }
 }
 

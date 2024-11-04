@@ -29,33 +29,66 @@ namespace PreParcial2.Models
             get
             {
                 ListaVehiculos.Sort();
+                
                 Vehiculo v = new Vehiculo(patente, null);
+                
                 int idx = ListaVehiculos.BinarySearch(v);
 
                 if (idx >= 0)
                     return ListaVehiculos[idx];
                 return null;
             }
+
         }
 
         public void AgregarTicket (Ticket turno)
         {
-            ListaAtendidos.Add(turno);
+            if (turno != null)
+            {
+                if (turno is Denuncia)
+                {
+                    denuncias.Enqueue((Denuncia)turno);
+                }
+                else if (turno is Cliente)
+                {
+                    nuevos.Enqueue((Cliente)turno);
+                }
+            }
         }
 
         public Ticket AtenderTicket(int tipo, int dni)
         {
-            if (tipo == 1)
-            { }
-            else if (tipo == 2)
+            Ticket atendido = null;
+            
+            if (tipo == 0)
             {
+                if (denuncias.Count > 0)
+                { atendido = denuncias.Dequeue(); }
             }
-            else if (tipo == 3)
-            { }
-            else if (tipo == 4)
-            { }
+            else if (tipo == 1)
+            {
+                if (nuevos.Count > 0)
+                { atendido = nuevos.Dequeue(); }
 
-            return null;
+            }
+
+            if (atendido != null)
+            {
+                ListaAtendidos.Add (atendido);
+            }
+
+            return atendido;
+        }
+
+        public void AgregarVehiculo (string nroPatente, int dniDueño)
+        {
+            Vehiculo nuevo = this[nroPatente];
+            if (nuevo == null)
+            {
+                Cliente cliente = new Cliente(dniDueño);
+                nuevo = new Vehiculo(nroPatente, cliente);
+                ListaVehiculos.Add(nuevo);
+            }
         }
     }
 }
